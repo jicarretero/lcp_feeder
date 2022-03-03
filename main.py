@@ -14,10 +14,7 @@ def set_self_software(config):
 
     print(SoftwareObjectsFromNmap.json())
 
-    headers = {
-        "content-type": "application/json",
-    }
-
+    headers = config.get_headers({ "content-type": "application/json" })
     response = post(config.lcp_url + "/self/software", headers=headers, data=SoftwareObjectsFromNmap.json())
 
     print("Status Code: ", response.status_code)
@@ -38,4 +35,4 @@ if __name__ == "__main__":
     initial_configuration(config)
 
     # Skip this for now
-    # set_self_software(config)
+    set_self_software(config)

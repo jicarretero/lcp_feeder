@@ -19,8 +19,7 @@ class LCPStarter:
     def get_lcp_self(self):
         url = join(self.config.lcp_url, "self")
 
-        headers = {
-        }
+        headers = self.config.get_headers()
 
         response = get(url, headers=headers)
         if response.status_code == 404:
@@ -31,9 +30,8 @@ class LCPStarter:
         print(response)
 
     def set_lcp_config(self):
-        headers = {
-            "content-type": "application/json"
-        }
+        headers = self.config.get_headers( {"content-type": "application/json"})
+
         cfg = self.config.lcp_config
         cfg['type'] = 'LCPDescription'
         url = join(self.config.lcp_url, "self/configuration")

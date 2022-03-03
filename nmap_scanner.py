@@ -63,6 +63,8 @@ class PortScanner:
 
     def scan_open_ports(self):
         for a in self.open_ports:
+            if a['port'] in self.config.skip_local_scanning['tcp_ports']:
+                continue
             print("-------------- Scanning: ", a['address'], ":", a['port'])
             ip = a['address'] if a['address'] != '0.0.0.0' else '127.0.0.1'
             self.nm.scan(ip, str(a['port']))

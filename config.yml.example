@@ -14,3 +14,6 @@ lcp_config:
 # Configuration for the LCP parent of our LCP -- The simplest way
 # lcp_parent_url:
 
+# Headers - HTTP Headers for Authorization or whatever
+headers:
+  Authorization: whatever authoriztion header 
