@@ -1,0 +1,16 @@
+# URL where the lcp_feeder will connect to contact LCP
+lcp_url: http://localhost:4000
+
+# A testing mechanism to prevent searching for software with NMAP all the time
+test_config_file: /tmp/test_config_file.json
+
+# Configuration of LCP -- It will provide an initial configuration to LCP (only mandatory if LCP is not prev. configured)
+lcp_config:
+  id: urn:lcp:behave-tests
+  name: lcp-behave-tests,
+  url: http://10.20.30.1:4000
+  description: LCP node for testing purposes
+
+# Configuration for the LCP parent of our LCP -- The simplest way
+# lcp_parent_url:
+

@@ -16,7 +16,6 @@ def set_self_software(config):
 
     headers = {
         "content-type": "application/json",
-        "Authorization": "GUARD eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIxNjE2NzgxMDU4IiwiZXhwIjoiMTY0ODMxNzA1OCIsIm5iZiI6MTYxNjc4MTA1OH0.4jC0t-VJwKR4e--LT-QU36hATUUbf530UL-fHj_bssE"
     }
 
     response = post(config.lcp_url + "/self/software", headers=headers, data=SoftwareObjectsFromNmap.json())

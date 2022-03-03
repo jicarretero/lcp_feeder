@@ -20,7 +20,6 @@ class LCPStarter:
         url = join(self.config.lcp_url, "self")
 
         headers = {
-            "Authorization": "GUARD eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIxNjE2NzgxMDU4IiwiZXhwIjoiMTY0ODMxNzA1OCIsIm5iZiI6MTYxNjc4MTA1OH0.4jC0t-VJwKR4e--LT-QU36hATUUbf530UL-fHj_bssE"
         }
 
         response = get(url, headers=headers)
@@ -33,7 +32,6 @@ class LCPStarter:
 
     def set_lcp_config(self):
         headers = {
-            "Authorization": "GUARD eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOiIxNjE2NzgxMDU4IiwiZXhwIjoiMTY0ODMxNzA1OCIsIm5iZiI6MTYxNjc4MTA1OH0.4jC0t-VJwKR4e--LT-QU36hATUUbf530UL-fHj_bssE",
             "content-type": "application/json"
         }
         cfg = self.config.lcp_config
