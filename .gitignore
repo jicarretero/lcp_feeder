@@ -1,0 +1,6 @@
+/.history
+__pycache__
+/.venv
+*.pyc
+config.ini
+/.idea

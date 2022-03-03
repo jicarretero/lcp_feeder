@@ -1,0 +1,11 @@
+lcp_url: http://localhost:4000
+
+test_config_file: /tmp/test_config_file.json
+
+lcp_config:
+  id: urn:lcp:behave-tests
+  name: lcp-behave-tests,
+  url: http://10.20.30.1:4000
+  description: LCP node for testing purposes
+
+# lcp_parent_url:
