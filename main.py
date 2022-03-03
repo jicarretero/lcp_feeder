@@ -38,4 +38,5 @@ if __name__ == "__main__":
 
     initial_configuration(config)
 
+    # Skip this for now
     # set_self_software(config)
