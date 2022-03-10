@@ -17,3 +17,9 @@ lcp_config:
 # Headers - HTTP Headers for Authorization or whatever
 headers:
   Authorization: whatever authoriztion header 
+
+# Skip scanning some local ports in order to ignore some local software
+skip_local_scanning:
+  udp_ports: []
+  tcp_ports: [4000]
+

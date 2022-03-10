@@ -89,23 +89,33 @@ class SoftwareObjectsFromNmap:
             json.dump(SoftwareObjectsFromNmap.localSoftware, f)
 
     @classmethod
+    def next(cls, data):
+        e = data.pop(0)
+        if e.startswith('"'):
+            e = e + ';' + SoftwareObjectsFromNmap.next(data)
+        return e
+
+
+    @classmethod
     def SoftwareDefinitionFromNmapData(cls, nmap_csv : str, data : dict):
         sw_data = nmap_csv.strip().split(';')
         d = {}
-        host = sw_data.pop(0)
+
+        host = SoftwareObjectsFromNmap.next(sw_data)
         host = data['address']
-        hostname = sw_data.pop(0)
-        hostname_type = sw_data.pop(0)
-        protocol = sw_data.pop(0)
-        port = sw_data.pop(0)
-        name = sw_data.pop(0)
-        state = sw_data.pop(0)
-        product = sw_data.pop(0)
-        extrainfo = sw_data.pop(0)
-        reason = sw_data.pop(0)
-        version = sw_data.pop(0)
-        conf = sw_data.pop(0)
-        cpe = sw_data.pop(0)
+        hostname = SoftwareObjectsFromNmap.next(sw_data)
+        hostname_type = SoftwareObjectsFromNmap.next(sw_data)
+        protocol = SoftwareObjectsFromNmap.next(sw_data)
+        port = SoftwareObjectsFromNmap.next(sw_data)
+        name = SoftwareObjectsFromNmap.next(sw_data)
+        state = SoftwareObjectsFromNmap.next(sw_data)
+        product = SoftwareObjectsFromNmap.next(sw_data)
+        extrainfo = SoftwareObjectsFromNmap.next(sw_data)
+        reason = SoftwareObjectsFromNmap.next(sw_data)
+        version = SoftwareObjectsFromNmap.next(sw_data)
+        conf = SoftwareObjectsFromNmap.next(sw_data)
+        cpe = SoftwareObjectsFromNmap.next(sw_data)
+
 
         d['host'] = host
         d['hosname'] = hostname
